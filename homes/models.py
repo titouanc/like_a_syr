@@ -22,7 +22,7 @@ class Home(models.Model):
     email = models.EmailField(verbose_name=u"Adresse email")
     name = models.CharField(max_length=200, verbose_name=u"Nom")
 
-    user_prefs = models.TextField(verbose_name=u"Conditions d'accueil")
-    remarks = models.TextField(verbose_name=u"Remarques")
+    user_prefs = models.TextField(verbose_name=u"Conditions d'accueil", blank=True)
+    remarks = models.TextField(verbose_name=u"Remarques service d'accueil", null=True, blank=True)
 
     tags = TaggableManager()

@@ -7,4 +7,5 @@ class HomeCreate(CreateView):
     success = "/thx.html"
     fields = (
         'name', 'dispo_from', 'dispo_to',
-        'places', 'address', 'phone', 'email')
+        'places', 'address', 'phone', 'email',
+        'user_prefs')
