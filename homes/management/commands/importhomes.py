@@ -27,10 +27,9 @@ class Command(BaseCommand):
                 else:
                     home.phone = ""
             home.user_prefs = unicode(row[10])
-            home.services = unicode(row[11])
             home.places = 0
             home.languages = row[13]
-            home.remarks = unicode(row[19])
+            home.remarks = unicode(row[19]) + '\n' + unicode(row[11])
             if row[20] == "D":
                 home.status = "A deja des refugies"
             elif row[20] == "M":
