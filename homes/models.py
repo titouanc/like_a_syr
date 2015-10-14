@@ -27,7 +27,7 @@ class Home(models.Model):
     # Languages
     languages = models.TextField(verbose_name=u"Langues parlées")
 
-    user_prefs = models.TextField(verbose_name=u"Conditions d'accueil")
-    remarks = models.TextField(verbose_name=u"Remarques")
+    user_prefs = models.TextField(verbose_name=u"Conditions d'accueil", null=True, blank=True)
+    remarks = models.TextField(verbose_name=u"Remarques", null=True, blank=True)
 
     tags = TaggableManager()
