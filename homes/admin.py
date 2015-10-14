@@ -7,8 +7,8 @@ from .models import Home
 @admin.register(Home)
 class HomeAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 'status', 'dispo_from', 'dispo_to',
-        'places', 'languages', 'phone', 'user_prefs', 'remarks')
+        'name', 'remarks', 'dispo_from', 'dispo_to',
+        'places', 'languages', 'phone', 'user_prefs')
     list_filter = (
         ('dispo_from', DateRangeFilter),
         ('dispo_to', DateRangeFilter))

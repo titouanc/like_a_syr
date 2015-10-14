@@ -26,24 +26,26 @@ class Command(BaseCommand):
                     home.phone = str(row[5]) if row[5][0] == "0" else "0" + row[5]
                 else:
                     home.phone = ""
-            home.user_prefs = unicode(row[10])
+            home.user_prefs = unicode(row[10]) + '\n' + unicode(row[11])
             home.places = 0
             home.languages = row[13]
-            home.remarks = unicode(row[19]) + '\n' + unicode(row[11])
+            
+            status = ""
             if row[20] == "D":
-                home.status = "A deja des refugies"
+                status = "A deja des refugies"
             elif row[20] == "M":
-                home.status = "A appeler absolument ce mercredi"
+                status = "A appeler absolument ce mercredi"
             elif row[20] == "J":
-                home.status = "Dispo avant jeudi"
+                status = "Dispo avant jeudi"
             elif row[20] == "K":
-                home.status = "Pas dispo avant jeudi"
+                status = "Pas dispo avant jeudi"
             elif row[20] == "T":
-                home.status = "On a pas telephone"
+                status = "On a pas telephone"
             elif row[20] == "C":
-                home.status = "Il faut les rappeler SEJOUR COURT"
+                status = "Il faut les rappeler SEJOUR COURT"
             elif row[20] == "L":
-                home.status = "Il faut les rappeler SEJOUR LONG"
+                status = "Il faut les rappeler SEJOUR LONG"
+            home.remarks = unicode(row[19]) + '\n' + status
             home.save()
 
     def handle(self, *args, **options):

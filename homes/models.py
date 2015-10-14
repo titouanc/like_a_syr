@@ -13,8 +13,6 @@ class Home(models.Model):
         verbose_name=u"Disponible à partir du", null=True)
     dispo_to = models.DateField(
         verbose_name=u"Disponible jusqu'au", null=True, blank=True)
-    status = models.TextField(
-        verbose_name=u"Statut (telephone ou non...)")
 
     # Last time user was contacted
     last_contact = models.DateTimeField(
@@ -47,4 +45,4 @@ class Home(models.Model):
     remarks = models.TextField(
         verbose_name=u"Remarques du service d'accueil", null=True, blank=True)
 
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
