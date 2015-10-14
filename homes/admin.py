@@ -8,7 +8,7 @@ from .models import Home
 class HomeAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'status', 'dispo_from', 'dispo_to',
-        'places', 'languages', 'phone', 'services', 'user_prefs', 'remarks')
+        'places', 'languages', 'phone', 'user_prefs', 'remarks')
     list_filter = (
         ('dispo_from', DateRangeFilter),
         ('dispo_to', DateRangeFilter))
