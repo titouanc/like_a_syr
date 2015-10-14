@@ -15,7 +15,8 @@ class Home(models.Model):
     last_contact = models.DateTimeField(verbose_name=u"Dernier contact", null=True, blank=True)
 
     # Available places
-    places = models.TextField(verbose_name=u"Places diponibles")
+    places = models.IntegerField(verbose_name=u"Places diponibles")
+    services = models.TextField(verbose_name="Services d'accueil proposés en plus d'un lit")
 
     # Coordinates
     address = models.TextField(verbose_name=u"Adresse")
