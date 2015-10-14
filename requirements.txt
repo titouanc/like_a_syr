@@ -1,0 +1,2 @@
+django==1.8.5
+django-daterange-filter==1.2.0
