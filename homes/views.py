@@ -19,4 +19,4 @@ class HomeCreate(CreateView):
     fields = (
         'name', 'dispo_from', 'dispo_to',
         'places', 'address', 'phone', 'email',
-        'user_prefs')
+        'languages', 'user_prefs')
