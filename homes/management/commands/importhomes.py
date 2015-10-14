@@ -18,7 +18,14 @@ class Command(BaseCommand):
             home = Home()
             home.last_contact = row[0] if row[0] else None
             home.name = row[4]
-            home.phone = row[5]
+            try:
+                phone = int(row[5])
+                home.phone = "0" + str(phone)
+            except:
+                if row[5]:
+                    home.phone = str(row[5]) if row[5][0] == "0" else "0" + row[5]
+                else:
+                    home.phone = ""
             home.user_prefs = unicode(row[10])
             home.services = unicode(row[11])
             home.places = 0
