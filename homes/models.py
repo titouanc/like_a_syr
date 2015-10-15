@@ -19,7 +19,7 @@ class Home(models.Model):
         verbose_name=u"Dernier contact avec l'hôte", null=True, blank=True)
 
     # Available places
-    places = models.IntegerField(
+    places = models.PositiveIntegerField(
         verbose_name=u"Places diponibles")
 
     # Coordinates
